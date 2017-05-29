@@ -1,0 +1,24 @@
+<div class="box-body">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Matrícula</th>
+            <th>Cargo</th>
+            <th>CRM</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="funcionario in funcionarios">
+                <td>{{ funcionario.nome }}</td>
+                <td>{{ funcionario.matricula }}</td>
+                <td>{{ funcionario.cargo }}</td>
+                <td>{{ funcionario.crm }}</td>
+                <td class="table-actions">
+                    <button class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i></button>
+                    <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

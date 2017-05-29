@@ -1,0 +1,47 @@
+<div role="form">
+    <div class="box-body">
+        <div class="col-xs-12 col-sm-4">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input id="nome" class="form-control" ng-model="funcionarioNovo.nome" placeholder="Informe o nome">
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input id="cpf" class="form-control" ng-model="funcionarioNovo.cpf" placeholder="Informe o CPF">
+            </div>
+            <div class="form-group">
+                <label for="matricula">Matrícula</label>
+                <input id="matricula" class="form-control" ng-model="funcionarioNovo.matricula" placeholder="Informe o CPF">
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">Cargo</label>
+                <select class="form-control" ng-model="funcionarioNovo.cargo">
+                    <option value="" selected="selected" >Selecione</option>
+                    <option value="MEDICO">Médico(a)</option>
+                    <option value="ENFERMEIRO">Enfermeiro(a)</option>
+                    <option value="TECNICO">Técnico(a)</option>
+                    <option value="ATENDENTE">Atendente</option>
+                    <option value="DIRETOR">Diretor(a)</option>
+                </select>
+
+            </div>
+
+            <!--<div class="form-group">
+                <label for="rua">Rua</label>
+                <input id="rua" class="form-control" placeholder="Informe a rua">
+            </div>
+            <div class="form-group">
+                <label for="cep">Rua</label>
+                <input id="cep" class="form-control" placeholder="Informe o CEP">
+            </div>-->
+            
+        </div>
+    </div>
+    <div class="box-footer">
+        <button class="btn btn-primary" ng-click="CriarFuncionario()">Incluir</button>
+        <button class="btn btn-info">Alterar</button>
+        <button class="btn btn-danger">Excluir</button>
+        <button class="btn btn-default">Cancelar</button>
+    </div>
+</div>
