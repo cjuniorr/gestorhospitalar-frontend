@@ -1,0 +1,96 @@
+<section class="content-header">
+    <h1>Consultas OK<small>Cadastro</small></h1>
+</section>
+
+
+<section>
+    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#cadastrar-modal">Cadastrar</a>
+
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Paciente</th>
+                    <th>Medico</th>
+                    <th>Sala</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="consulta in consultas">
+                    <td>{{consulta.paciente[0].nome}}</td>
+                    <td>{{consulta.medico[0].nome}}</td>
+                    <td>{{consulta.sala}}</td>
+                    <td><button type="button" class="btn btn-primary">Editar</button></td>
+                    <td><button type="button" class="btn btn-danger" ng-click="removerConsulta( consulta )">Remover</button></td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+
+<div class="modal fade" id="cadastrar-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalLabel">Nova consulta</h4>
+      </div>
+      <div class="modal-body">
+
+            <div role="form">
+                        <div class="box-body">
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="form-group">
+                                    <label for="paciente">Paciente</label>
+                                    <select class="form-control" ng-model="consultaNovo.paciente">
+                                        <option value="" selected="selected" >Selecione</option>
+                                        <option value="{{paciente}}" ng-repeat="paciente in pacientes">{{paciente.nome}}</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="medico">Médico</label>
+                                    <select class="form-control" ng-model="consultaNovo.medico">
+                                        <option value="" selected="selected" >Selecione</option>
+                                        <option value="{{medico}}" ng-repeat="medico in medicos">{{medico.nome}}</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="sala">Sala</label>
+                                    <select class="form-control" ng-model="consultaNovo.sala">
+                                        <option value="" selected="selected" >Selecione</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>                                                                                
+                                    </select>
+                                </div>
+
+
+                                <!--<div class="form-group">
+                                    <label for="rua">Rua</label>
+                                    <input id="rua" class="form-control" placeholder="Informe a rua">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cep">Rua</label>
+                                    <input id="cep" class="form-control" placeholder="Informe o CEP">
+                                </div>-->
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="criarConsulta()">Cadastrar Consulta</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+</section>
